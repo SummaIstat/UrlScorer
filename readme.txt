@@ -12,6 +12,22 @@ Each document in the specified Solr collection is supposed to contain the textua
 
 In order to assign a score to a particular document the program must have a set of information about the firm whose the page refers to.
 
+For each document the SW generates a vector of numbers, something like this :
+
+	207101
+
+Every position in the vector contains a number that means “a specific element/characteristic in the web page was found or not” (eg. presence of the telephone number)
+
+For each element we calculated the confusion matrix that would have been obtained if we used just that element for classification purposes.
+
+Based on that confusion matrix we computed standard performance measures: 
+	precision
+	recall
+	fmeasure
+
+Then we assigned as raw weights to elements the f-measures of the corresponding confusion matrixes, lastly we have normalized the raw weights so that the sum of the final (adjusted) weights is 1000.
+
+In order to assign a final score to a link we summed the normalized weights of those elements that were actually present in the vector.
 
 ======================================================================
 How is the project folder made
