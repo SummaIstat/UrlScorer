@@ -167,28 +167,28 @@ public class ScoreCalculationStrategy {
 		String zipCodeDigit = scoreVectorString.substring(6, 7);
 				
 		if (telephoneDigit.equals("2")){
-			score = score + Conf.telephoneScore;
+			score = score + Conf.getTelephoneScore();
 		}
 		if (simpleUrlDigit.equals("1")){
-			score = score + Conf.simpleUrlScore;
+			score = score + Conf.getSimpleUrlScore();
 		}
 		if (linkPositionDigit.equals("8")){
-			score = score + Conf.linkPositionScore;
+			score = score + Conf.getLinkPositionScore();
 		}
 		if (linkPositionDigit.equals("9")){
-			score = score + Conf.linkPositionScore;
+			score = score + Conf.getLinkPositionScore();
 		}
 		if (vatNumberDigit.equals("1")){
-			score = score + Conf.vatNumberScore;
+			score = score + Conf.getVatNumberScore();
 		}
 		if (municipalityDigit.equals("1")){
-			score = score + Conf.municipalityScore;
+			score = score + Conf.getMunicipalityScore();
 		}
 		if (provinceDigit.equals("1")){
-			score = score + Conf.provinceScore;
+			score = score + Conf.getProvinceScore();
 		}
 		if (zipCodeDigit.equals("1")){
-			score = score + Conf.zipCodeScore;
+			score = score + Conf.getZipCodeScore();
 		}
 		
 		return score;

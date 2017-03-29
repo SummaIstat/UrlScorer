@@ -7,11 +7,58 @@ public class Conf {
 
 	public static final String linksFileName = "linksScores";
 
-	public static final int telephoneScore = 156;
-	public static final int simpleUrlScore = 158;
-	public static final int linkPositionScore = 174;
-	public static final int vatNumberScore = 188;
-	public static final int municipalityScore = 163;
-	public static final int provinceScore = 161;
-	public static final int zipCodeScore = 0;
+	private static int telephoneScore = 156;
+	private static int simpleUrlScore = 158;
+	private static int linkPositionScore = 174;
+	private static int vatNumberScore = 188;
+	private static int municipalityScore = 163;
+	private static int provinceScore = 161;
+	private static int zipCodeScore = 0;
+	
+	public static int getTelephoneScore() {
+		return telephoneScore;
+	}
+	public static void setTelephoneScore(int telephoneScore) {
+		Conf.telephoneScore = telephoneScore;
+	}
+	public static int getSimpleUrlScore() {
+		return simpleUrlScore;
+	}
+	public static void setSimpleUrlScore(int simpleUrlScore) {
+		Conf.simpleUrlScore = simpleUrlScore;
+	}
+	public static int getLinkPositionScore() {
+		return linkPositionScore;
+	}
+	public static void setLinkPositionScore(int linkPositionScore) {
+		Conf.linkPositionScore = linkPositionScore;
+	}
+	public static int getVatNumberScore() {
+		return vatNumberScore;
+	}
+	public static void setVatNumberScore(int vatNumberScore) {
+		Conf.vatNumberScore = vatNumberScore;
+	}
+	public static int getMunicipalityScore() {
+		return municipalityScore;
+	}
+	public static void setMunicipalityScore(int municipalityScore) {
+		Conf.municipalityScore = municipalityScore;
+	}
+	public static int getProvinceScore() {
+		return provinceScore;
+	}
+	public static void setProvinceScore(int provinceScore) {
+		Conf.provinceScore = provinceScore;
+	}
+	public static int getZipCodeScore() {
+		return zipCodeScore;
+	}
+	public static void setZipCodeScore(int zipCodeScore) {
+		Conf.zipCodeScore = zipCodeScore;
+	}
+	public static String getLinksfilename() {
+		return linksFileName;
+	}
+	
 }

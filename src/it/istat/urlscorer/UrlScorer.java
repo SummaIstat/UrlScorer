@@ -168,6 +168,49 @@ public class UrlScorer {
 					System.exit(1);
 				}
 				
+				//TELEPHONE_SCORE = 156
+				if(props.getProperty("TELEPHONE_SCORE") == null){
+					System.out.println("Wrong/No configuration for the parameter TELEPHONE_SCORE !");	
+					System.exit(1);
+				}
+				if(props.getProperty("SIMPLE_URL_SCORE") == null){
+					System.out.println("Wrong/No configuration for the parameter SIMPLE_URL_SCORE !");	
+					System.exit(1);
+				}
+				if(props.getProperty("LINK_POSITION_SCORE") == null){
+					System.out.println("Wrong/No configuration for the parameter LINK_POSITION_SCORE !");
+					System.exit(1);
+				}
+				if(props.getProperty("VAT_NUMBER_SCORE") == null){
+					System.out.println("Wrong/No configuration for the parameter VAT_NUMBER_SCORE !");	
+					System.exit(1);
+				}
+				if(props.getProperty("MUNICIPALITY_SCORE") == null){
+					System.out.println("Wrong/No configuration for the parameter MUNICIPALITY_SCORE !");
+					System.exit(1);
+				}
+				if(props.getProperty("PROVINCE_SCORE") == null){
+					System.out.println("Wrong/No configuration for the parameter PROVINCE_SCORE !");	
+					System.exit(1);
+				}
+				if(props.getProperty("ZIP_CODE_SCORE") == null){
+					System.out.println("Wrong/No configuration for the parameter ZIP_CODE_SCORE !");
+					System.exit(1);
+				}
+				
+				try{
+					Conf.setTelephoneScore(Integer.parseInt(props.getProperty("TELEPHONE_SCORE")));
+					Conf.setSimpleUrlScore(Integer.parseInt(props.getProperty("SIMPLE_URL_SCORE")));
+					Conf.setLinkPositionScore(Integer.parseInt(props.getProperty("LINK_POSITION_SCORE")));
+					Conf.setVatNumberScore(Integer.parseInt(props.getProperty("VAT_NUMBER_SCORE")));
+					Conf.setMunicipalityScore(Integer.parseInt(props.getProperty("MUNICIPALITY_SCORE")));
+					Conf.setProvinceScore(Integer.parseInt(props.getProperty("PROVINCE_SCORE")));
+					Conf.setZipCodeScore(Integer.parseInt(props.getProperty("ZIP_CODE_SCORE")));
+				}catch(NumberFormatException nfe){
+					System.out.println("All the scorer parameter must be integers !");
+					System.exit(1);
+				}
+				
 			} else {
 				System.out.println("Error opening file " + args[0] + " or non-existent file");
 				System.out.println("==>  program execution terminated <==");
