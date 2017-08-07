@@ -14,6 +14,8 @@ public class Conf {
 	private static int municipalityScore = 163;
 	private static int provinceScore = 161;
 	private static int zipCodeScore = 0;
+	private static int firmsInfoNumCols = 9;
+	
 	
 	public static int getTelephoneScore() {
 		return telephoneScore;
@@ -59,6 +61,12 @@ public class Conf {
 	}
 	public static String getLinksfilename() {
 		return linksFileName;
+	}
+	public static int getFirmsInfoNumCols() {
+		return firmsInfoNumCols;
+	}
+	public static void setFirmsInfoNumCols(int firmsInfoNumCols) {
+		Conf.firmsInfoNumCols = firmsInfoNumCols;
 	}
 	
 }

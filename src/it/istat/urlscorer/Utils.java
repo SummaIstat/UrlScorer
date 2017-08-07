@@ -80,7 +80,7 @@ public class Utils {
 				String delimiter = "\t";
 				String[] tokens = strLine.split(delimiter,-2);
 								
-				if(tokens.length <= 9){
+				if(tokens.length <= Conf.getFirmsInfoNumCols()){
 					firm = new Firm();
 					firm.setFirmId(tokens[0]);
 					firm.setVatNumber(tokens[1]);

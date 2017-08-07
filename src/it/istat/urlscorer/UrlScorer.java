@@ -35,7 +35,7 @@ public class UrlScorer {
 	private String firmsInfoFilePath;
 	private String provincesFilePath;
 	private String solrIndexDirectoryPath;
-	
+		
 	public static void main(String[] args) throws IOException {
 		
 		logger.debug("**********************************************************************************************");
@@ -117,6 +117,15 @@ public class UrlScorer {
 				InputStream inputStream = fis;
 				Properties props = new Properties();
 				props.load(inputStream);
+				
+				if(props.getProperty("FIRMS_INFO_NUM_COLS") != null){
+					props.getProperty("FIRMS_INFO_NUM_COLS");
+				}else{
+					System.out.println("No custom configuration for the parameter FIRMS_INFO_NUM_COLS");
+					System.out.println("The standard value (9) will be assumed");
+					System.exit(1);
+				}
+				
 				
 				// Mandatory parameters
 								
@@ -206,8 +215,9 @@ public class UrlScorer {
 					Conf.setMunicipalityScore(Integer.parseInt(props.getProperty("MUNICIPALITY_SCORE")));
 					Conf.setProvinceScore(Integer.parseInt(props.getProperty("PROVINCE_SCORE")));
 					Conf.setZipCodeScore(Integer.parseInt(props.getProperty("ZIP_CODE_SCORE")));
+					Conf.setFirmsInfoNumCols(Integer.parseInt(props.getProperty("FIRMS_INFO_NUM_COLS")));
 				}catch(NumberFormatException nfe){
-					System.out.println("All the scorer parameter must be integers !");
+					System.out.println("All the scorer (and input files related) tech parameters must be integers !");
 					System.exit(1);
 				}
 				
