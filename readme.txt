@@ -129,6 +129,12 @@ eg:
 
 java -jar -Xmx1536m C:\workspace2\UrlScorer\sandbox\UrlScorer.jar C:\workspace2\UrlScorer\sandbox\urlScorerConf.properties
 
+======================================================================
+LICENSING
+======================================================================
+
+This software is released under the European Union Public License v. 1.2
+A copy of the license is included in the project folder.
 
 ======================================================================
 Considerations
